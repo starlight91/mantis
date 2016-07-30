@@ -28,7 +28,7 @@ require_once( 'schema.php' );
 
 access_ensure_global_level( config_get_global( 'admin_site_threshold' ) );
 
-html_page_top( 'MantisBT Administration' );
+html_page_top( 'Tassig Administration' );
 
 /**
  * Print Check result - information only

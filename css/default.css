@@ -1,12 +1,40 @@
+@font-face {
+  font-family: 'DIN';
+  src: url("../fonts/2B8C19_0_0.eot");
+  src: url("../fonts/2B8C19_0_0.eot?#iefix") format("embedded-opentype"), url("../fonts/2B8C19_0_0.woff") format("woff"), url("../fonts/2B8C19_0_0.ttf") format("truetype"), url("../fonts/2B8C19_0_0.svg#font-name") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'DIN';
+  src: url("../fonts/2B8C19_1_0.eot");
+  src: url("../fonts/2B8C19_1_0.eot?#iefix") format("embedded-opentype"), url("../fonts/2B8C19_1_0.woff") format("woff"), url("../fonts/2B8C19_1_0.ttf") format("truetype"), url("../fonts/2B8C19_1_0.svg#font-name") format("svg");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'DIN';
+  src: url("../fonts/2B8C19_2_0.eot");
+  src: url("../fonts/2B8C19_2_0.eot?#iefix") format("embedded-opentype"), url("../fonts/2B8C19_2_0.woff") format("woff"), url("../fonts/2B8C19_2_0.ttf") format("truetype"), url("../fonts/2B8C19_2_0.svg#font-name") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Libre Baskerville';
+  src: url("../fonts/LibreBaskerville-Italic_gdi.eot");
+  src: url("../fonts/LibreBaskerville-Italic_gdi.eot?#iefix") format("embedded-opentype"), url("../fonts/LibreBaskerville-Italic_gdi.woff") format("woff"), url("../fonts/LibreBaskerville-Italic_gdi.ttf") format("truetype"), url("../fonts/LibreBaskerville-Italic_gdi.svg#font-name") format("svg");
+  font-weight: normal;
+  font-style: italic; }
+
 body {
 	background-color: #ffffff;
 	color: #000000;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-family: DIN, sans-serif;
 	font-size: 10pt;
 	margin: 6px 4px;
 }
 
-p				{ font-family: Verdana, Arial, Helvetica, sans-serif; }
+p				{ font-family: DIN, sans-serif; }
 p.compact		{ margin: 0;}
 
 pre				{ margin-top: 0px; margin-bottom: 0px; }
@@ -28,7 +56,7 @@ input.button-small	{ font-size: 1em; }
 textarea			{}
 select				{}
 
-span				{ font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; }
+span				{ font-family: DIN, sans-serif; font-size: 10pt; }
 span.print			{ font-size: 8pt; }
 span.required 		{ font-size: 8pt; color: red; }
 span.small 			{ font-size: 8pt; font-weight: normal; }
@@ -44,7 +72,7 @@ table.width75		{ width: 74%;  margin-left: 13%; margin-right: 13%; border: solid
 table.width60		{ width: 60%;  margin-left: 20%; margin-right: 20%; border: solid 1px #999; }
 table.width50		{ width: 50%;  margin-left: 25%; margin-right: 25%; border: solid 1px #999; }
 
-td,th 				{ font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; padding: 4px; text-align: left; }
+td,th 				{ font-family: DIN, sans-serif; font-size: 10pt; padding: 4px; text-align: left; }
 td.center			{ text-align: center; }
 td.left				{ text-align: left; }
 td.right			{ text-align: right; }
@@ -334,12 +362,12 @@ div.quick-summary-right	{ width: 49%; padding: 2px; text-align: right; float: ri
 }
 
 /* Roadmap */
-tt > .strike				{ font-family: monospace; }
+tt > .strike				{ font-family: DIN; }
 .progress400				{ position: relative; width: 400px; border: 1px solid #d7d7d7; margin-top: 1em; margin-bottom: 1em; padding: 1px; }
 .progress400 .bar			{ display: block; position: relative; background: #6bba70; text-align: center; font-weight: normal; color: #333; height: 2em; line-height: 2em; }
 
 #footer {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-family: DIN, sans-serif;
 	font-size: 8pt;
 	margin-top: 2em;
 	clear: both;

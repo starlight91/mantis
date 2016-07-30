@@ -18,7 +18,7 @@
  * Sign Up
  * @package MantisBT
  * @copyright Copyright 2000 - 2002  Kenzaburo Ito - kenito@300baud.org
- * @copyright Copyright 2002  MantisBT Team - mantisbt-dev@lists.sourceforge.net
+ * @copyright Copyright © 2000 - 2016 Tassig - mantisbt-dev@lists.sourceforge.net
  * @link http://www.mantisbt.org
  *
  * @uses core.php
@@ -53,6 +53,7 @@ require_api( 'utility_api.php' );
 form_security_validate( 'signup' );
 
 $f_username		= strip_tags( gpc_get_string( 'username' ) );
+$f_password		= strip_tags( gpc_get_string( 'password' ) );
 $f_email		= strip_tags( gpc_get_string( 'email' ) );
 $f_captcha		= gpc_get_string( 'captcha', '' );
 
@@ -83,9 +84,8 @@ if( ON == config_get( 'signup_use_captcha' ) && get_gd_version() > 0 	&&
 }
 
 # notify the selected group a new user has signed-up
-if( user_signup( $f_username, $f_email ) ) {
-	email_notify_new_account( $f_username, $f_email );
-}
+user_signup( $f_username, $f_password, $f_email );
+	//email_notify_new_account( $f_username, $f_password, $f_email );
 
 form_security_purge( 'signup' );
 

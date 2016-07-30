@@ -39,7 +39,7 @@ final class MantisCorePlugin extends MantisPlugin {
 
 		$this->version = MANTIS_VERSION;
 
-		$this->author = 'MantisBT Team';
+		$this->author = 'Tassig';
 		$this->contact = 'mantisbt-dev@lists.sourceforge.net';
 		$this->url = 'http://www.mantisbt.org';
 	}

@@ -571,13 +571,13 @@ function user_get_logged_in_user_ids( $p_session_duration_in_minutes ) {
  * @return string Cookie String
  */
 function user_create( $p_username, $p_password, $p_email = '',
-	$p_access_level = null, $p_protected = false, $p_enabled = true,
+	$p_access_level = null, $p_protected = false, $p_enabled = false,
 	$p_realname = '', $p_admin_name = '' ) {
 	if( null === $p_access_level ) {
 		$p_access_level = config_get( 'default_new_account_access_level' );
 	}
 
-	$t_password = auth_process_plain_password( $p_password );
+	//$t_password = auth_process_plain_password( $p_password );
 
 	$c_enabled = (bool)$p_enabled;
 
@@ -596,7 +596,7 @@ function user_create( $p_username, $p_password, $p_email = '',
 				  VALUES
 				    ( ' . db_param() . ', ' . db_param() . ', ' . db_param() . ', ' . db_param() . ', ' . db_param()  . ',
 				     ' . db_param() . ',' . db_param() . ',' . db_param() . ',' . db_param() . ', ' . db_param() . ')';
-	db_query( $t_query, array( $p_username, $p_email, $t_password, db_now(), db_now(), $c_enabled, (int)$p_access_level, 0, $t_cookie_string, $p_realname ) );
+	db_query( $t_query, array( $p_username, $p_email, md5( $p_password ), db_now(), db_now(), $c_enabled, (int)$p_access_level, 0, $t_cookie_string, $p_realname ) );
 
 	# Create preferences for the user
 	$t_user_id = db_insert_id( db_get_table( 'user' ) );
@@ -626,9 +626,10 @@ function user_create( $p_username, $p_password, $p_email = '',
  * returns false if error, the generated cookie string if ok
  * @param string $p_username The username to sign up.
  * @param string $p_email    The email address of the user signing up.
+ * @param string $p_password    The password of the user signing up.
  * @return string|boolean cookie string or false on error
  */
-function user_signup( $p_username, $p_email = null ) {
+function user_signup( $p_username, $p_password, $p_email = null ) {
 	if( null === $p_email ) {
 		$p_email = '';
 
@@ -659,9 +660,8 @@ function user_signup( $p_username, $p_email = null ) {
 	user_ensure_email_unique( $p_email );
 
 	# Create random password
-	$t_password = auth_generate_random_password();
-
-	return user_create( $p_username, $t_password, $p_email );
+	//$t_password = auth_generate_random_password();
+	return user_create( $p_username, $p_password, $p_email );
 }
 
 /**

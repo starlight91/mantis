@@ -95,7 +95,7 @@ html_begin();
 html_head_begin();
 html_css_link( 'admin.css' );
 html_content_type();
-html_title( 'MantisBT Administration - Check Installation' );
+html_title( 'Tassig Administration - Check Installation' );
 html_head_end();
 ?>
 

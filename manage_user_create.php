@@ -19,7 +19,7 @@
  *
  * @package MantisBT
  * @copyright Copyright 2000 - 2002  Kenzaburo Ito - kenito@300baud.org
- * @copyright Copyright 2002  MantisBT Team - mantisbt-dev@lists.sourceforge.net
+ * @copyright Copyright © 2000 - 2016 Tassig - mantisbt-dev@lists.sourceforge.net
  * @link http://www.mantisbt.org
  *
  * @uses core.php
@@ -62,8 +62,9 @@ access_ensure_global_level( config_get( 'manage_user_threshold' ) );
 
 $f_username        = gpc_get_string( 'username' );
 $f_realname        = gpc_get_string( 'realname', '' );
-$f_password        = gpc_get_string( 'password', '' );
-$f_password_verify = gpc_get_string( 'password_verify', '' );
+//$f_password        = gpc_get_string( 'password', '' );
+$f_password        = gpc_get_string( 'password' );
+$f_password_verify = gpc_get_string( 'password');
 $f_email           = gpc_get_string( 'email', '' );
 $f_access_level    = gpc_get_string( 'access_level' );
 $f_protected       = gpc_get_bool( 'protected' );
@@ -113,7 +114,7 @@ lang_push( config_get( 'default_language' ) );
 
 # create the user
 $t_admin_name = user_get_name( auth_get_current_user_id() );
-$t_cookie = user_create( $f_username, $f_password, $f_email, $f_access_level, $f_protected, $f_enabled, $t_realname, $t_admin_name );
+$t_cookie = user_create( $f_username, md5( $f_password ), $f_email, $f_access_level, $f_protected, $f_enabled, $t_realname, $t_admin_name );
 
 # set language back to user language
 lang_pop();

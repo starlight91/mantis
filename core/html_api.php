@@ -717,7 +717,7 @@ function html_footer() {
 
 	echo '<address id="mantisbt-copyright">' . "\n";
 	echo '<address id="version">Powered by <a href="http://www.mantisbt.org" title="bug tracking software">MantisBT ' . $t_version_suffix . "</a></address>\n";
-	echo 'Copyright &copy;' . $t_copyright_years . ' MantisBT Team';
+	echo 'Copyright &copy;' . $t_copyright_years . ' Tassig';
 
 	# Show optional user-specified custom copyright statement
 	$t_copyright_statement = config_get( 'copyright_statement' );

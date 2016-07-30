@@ -848,7 +848,7 @@ $g_fallback_language = 'english';
  * browser window title
  * @global string $g_window_title
  */
-$g_window_title = 'MantisBT';
+$g_window_title = 'Tassig';
 
 /**
  * Check for admin directory, database upgrades, etc.

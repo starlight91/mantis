@@ -18,7 +18,7 @@
  * Sign Up Page
  * @package MantisBT
  * @copyright Copyright 2000 - 2002  Kenzaburo Ito - kenito@300baud.org
- * @copyright Copyright 2002  MantisBT Team - mantisbt-dev@lists.sourceforge.net
+ * @copyright Copyright © 2000 - 2016 Tassig - mantisbt-dev@lists.sourceforge.net
  * @link http://www.mantisbt.org
  *
  * @uses core.php
@@ -92,6 +92,12 @@ $t_public_key = crypto_generate_uri_safe_nonce( 64 );
 			<div class="field-container">
 				<label for="email-field"><span><?php echo lang_get( 'email_label' ) ?></span></label>
 				<span class="input"><?php print_email_input( 'email', '' ) ?></span>
+				<span class="label-style"></span>
+			</div>
+
+			<div class="field-container">
+				<label for="password"><span><?php echo lang_get( 'password' ) ?></span></label>
+				<span class="input"><input id="password" type="password" name="password" size="32" maxlength="<?php echo DB_FIELD_SIZE_PASSWORD;?>" /></span>
 				<span class="label-style"></span>
 			</div>
 
