@@ -101,7 +101,7 @@ html_page_top2a();
 		<?php echo '[' . $f_username . ' - ' . $f_email . '] ' ?>
 	</div>
 
-	<div>
+	<div class="center">
 		<br />
 		<?php echo lang_get( 'password_emailed_msg' ) ?>
 		<br /><br />

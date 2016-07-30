@@ -700,10 +700,10 @@ function html_footer() {
 	if( !is_page_name( 'login_page' ) ) {
 		echo "\t" . '<div id="powered-by-mantisbt-logo">' . "\n";
 		$t_mantisbt_logo_url = helper_mantis_url( 'images/mantis_logo.png' );
-		echo "\t\t" . '<a href="http://www.mantisbt.org"
-			title="Mantis Bug Tracker: a free and open source web based bug tracking system.">
+		echo "\t\t" . '<a href="http://tassig.com/"
+			title="Tassig">
 			<img src="' . $t_mantisbt_logo_url . '" width="102" height="35"
-				alt="Powered by Mantis Bug Tracker: a free and open source web based bug tracking system." />
+				alt="Tassig" />
 			</a>' . "\n";
 		echo "\t" . '</div>' . "\n";
 	}
