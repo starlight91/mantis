@@ -523,10 +523,10 @@ function email_signup( $p_user_id, $p_confirm_hash, $p_admin_name = '' ) {
 
 	# Send signup email regardless of mail notification pref
 	# or else users won't be able to sign up
-	if( !is_blank( $t_email ) ) {
-		email_store( $t_email, $t_subject, $t_message, null, true );
-		log_event( LOG_EMAIL, 'Signup Email = %s, Hash = %s, User = @U%d', $t_email, $p_confirm_hash, $p_user_id );
-	}
+	// if( !is_blank( $t_email ) ) {
+	// 	email_store( $t_email, $t_subject, $t_message, null, true );
+	// 	log_event( LOG_EMAIL, 'Signup Email = %s, Hash = %s, User = @U%d', $t_email, $p_confirm_hash, $p_user_id );
+	// }
 
 	# lang_pop(); # see above
 }
